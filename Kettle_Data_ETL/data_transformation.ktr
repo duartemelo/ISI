@@ -438,46 +438,6 @@
   </notepads>
   <order>
     <hop>
-      <from>Filter movies</from>
-      <to>XML output movies</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter movies</from>
-      <to>Filter tv episodes</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter tv episodes</from>
-      <to>XML output tvEpisodes</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter tv episodes</from>
-      <to>Filter shorts</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter shorts</from>
-      <to>XML output shorts</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter shorts</from>
-      <to>Filter tvSeries</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter tvSeries</from>
-      <to>XML output tvSeries</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter tvSeries</from>
-      <to>XML output others</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Input GZIP TSV ratings</from>
       <to>Merge ratings to titles</to>
       <enabled>Y</enabled>
@@ -499,191 +459,40 @@
     </hop>
     <hop>
       <from>If rating values are null</from>
-      <to>Sort rows by titleType</to>
+      <to>Sort rows by tConst and titleType</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Sort rows by titleType</from>
-      <to>Filter movies</to>
+      <from>Sort rows by tConst and titleType</from>
+      <to>Switch / case</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Switch / case</from>
+      <to>XML output movies</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Switch / case</from>
+      <to>XML output tvEpisodes</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Switch / case</from>
+      <to>XML output shorts</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Switch / case</from>
+      <to>XML output tvSeries</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Switch / case</from>
+      <to>XML output others</to>
       <enabled>Y</enabled>
     </hop>
   </order>
-  <step>
-    <name>Filter movies</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <send_true_to>XML output movies</send_true_to>
-    <send_false_to>Filter tv episodes</send_false_to>
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <leftvalue>titleType</leftvalue>
-        <function>=</function>
-        <rightvalue/>
-        <value>
-          <name>constant</name>
-          <type>String</type>
-          <text>movie</text>
-          <length>-1</length>
-          <precision>-1</precision>
-          <isnull>N</isnull>
-          <mask/>
-        </value>
-      </condition>
-    </compare>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1248</xloc>
-      <yloc>272</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Filter shorts</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <send_true_to>XML output shorts</send_true_to>
-    <send_false_to>Filter tvSeries</send_false_to>
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <leftvalue>titleType</leftvalue>
-        <function>=</function>
-        <rightvalue/>
-        <value>
-          <name>constant</name>
-          <type>String</type>
-          <text>short</text>
-          <length>-1</length>
-          <precision>-1</precision>
-          <isnull>N</isnull>
-          <mask/>
-        </value>
-      </condition>
-    </compare>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1248</xloc>
-      <yloc>560</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Filter tv episodes</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <send_true_to>XML output tvEpisodes</send_true_to>
-    <send_false_to>Filter shorts</send_false_to>
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <leftvalue>titleType</leftvalue>
-        <function>=</function>
-        <rightvalue/>
-        <value>
-          <name>constant</name>
-          <type>String</type>
-          <text>tvEpisode</text>
-          <length>-1</length>
-          <precision>-1</precision>
-          <isnull>N</isnull>
-          <mask/>
-        </value>
-      </condition>
-    </compare>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1248</xloc>
-      <yloc>432</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Filter tvSeries</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <send_true_to>XML output tvSeries</send_true_to>
-    <send_false_to>XML output others</send_false_to>
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <leftvalue>titleType</leftvalue>
-        <function>=</function>
-        <rightvalue/>
-        <value>
-          <name>constant</name>
-          <type>String</type>
-          <text>tvSeries</text>
-          <length>-1</length>
-          <precision>-1</precision>
-          <isnull>N</isnull>
-          <mask/>
-        </value>
-      </condition>
-    </compare>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1248</xloc>
-      <yloc>688</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
   <step>
     <name>If rating values are null</name>
     <type>IfNull</type>
@@ -1110,7 +919,7 @@
     </GUI>
   </step>
   <step>
-    <name>Sort rows by titleType</name>
+    <name>Sort rows by tConst and titleType</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -1130,7 +939,7 @@
     <fields>
       <field>
         <name>tconst</name>
-        <ascending>N</ascending>
+        <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
         <collator_strength>0</collator_strength>
@@ -1399,7 +1208,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1520</xloc>
+      <xloc>1424</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1588,8 +1397,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1248</xloc>
-      <yloc>816</yloc>
+      <xloc>1088</xloc>
+      <yloc>656</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1777,8 +1586,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1520</xloc>
-      <yloc>560</yloc>
+      <xloc>1424</xloc>
+      <yloc>480</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1966,8 +1775,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1520</xloc>
-      <yloc>432</yloc>
+      <xloc>1424</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2155,8 +1964,58 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1536</xloc>
-      <yloc>688</yloc>
+      <xloc>1408</xloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Switch / case</name>
+    <type>SwitchCase</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fieldname>titleType</fieldname>
+    <use_contains>N</use_contains>
+    <case_value_type>None</case_value_type>
+    <case_value_format/>
+    <case_value_decimal/>
+    <case_value_group/>
+    <default_target_step>XML output others</default_target_step>
+    <cases>
+      <case>
+        <value>movie</value>
+        <target_step>XML output movies</target_step>
+      </case>
+      <case>
+        <value>tvEpisode</value>
+        <target_step>XML output tvEpisodes</target_step>
+      </case>
+      <case>
+        <value>short</value>
+        <target_step>XML output shorts</target_step>
+      </case>
+      <case>
+        <value>tvSeries</value>
+        <target_step>XML output tvSeries</target_step>
+      </case>
+    </cases>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
