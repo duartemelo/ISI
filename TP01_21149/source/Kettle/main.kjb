@@ -538,7 +538,7 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Delete files</name>
+      <name>Delete input files</name>
       <description/>
       <type>DELETE_FILES</type>
       <attributes/>
@@ -557,7 +557,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1232</xloc>
+      <xloc>1184</xloc>
       <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
@@ -671,7 +671,7 @@
     </hop>
     <hop>
       <from>Data_Transformation</from>
-      <to>Delete files</to>
+      <to>Delete input files</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -679,7 +679,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Delete files</from>
+      <from>Delete input files</from>
       <to>Mail Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
