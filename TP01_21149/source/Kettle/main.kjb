@@ -329,7 +329,7 @@
         </field>
         <field>
           <variable_name>PATH_INPUT</variable_name>
-          <variable_value>${Internal.Job.Filename.Directory}/test/</variable_value>
+          <variable_value>${Internal.Job.Filename.Directory}/../../data/input/</variable_value>
           <variable_type>JVM</variable_type>
         </field>
         <field>
