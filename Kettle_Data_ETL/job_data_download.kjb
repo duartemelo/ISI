@@ -291,8 +291,8 @@
       <description/>
       <type>HTTP</type>
       <attributes/>
-      <url>${URL}</url>
-      <targetfilename>${PATH}${FILENAME}</targetfilename>
+      <url>${URL_TITLES}</url>
+      <targetfilename>${PATH_INPUT}${FILENAME_TITLES}</targetfilename>
       <file_appended>N</file_appended>
       <date_time_added>N</date_time_added>
       <targetfilename_extension/>
@@ -312,7 +312,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>640</xloc>
+      <xloc>624</xloc>
       <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
@@ -346,7 +346,37 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>864</xloc>
+      <xloc>1040</xloc>
+      <yloc>208</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Download Title Ratings </name>
+      <description/>
+      <type>HTTP</type>
+      <attributes/>
+      <url>${URL_RATINGS}</url>
+      <targetfilename>${PATH_INPUT}${FILENAME_RATINGS}</targetfilename>
+      <file_appended>N</file_appended>
+      <date_time_added>N</date_time_added>
+      <targetfilename_extension/>
+      <uploadfilename/>
+      <run_every_row>N</run_every_row>
+      <url_fieldname/>
+      <upload_fieldname/>
+      <dest_fieldname/>
+      <username/>
+      <password>Encrypted </password>
+      <proxy_host/>
+      <proxy_port/>
+      <non_proxy_hosts/>
+      <addfilenameresult>Y</addfilenameresult>
+      <headers>
+      </headers>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>848</xloc>
       <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
@@ -363,6 +393,15 @@
     </hop>
     <hop>
       <from>Download Title Basics</from>
+      <to>Download Title Ratings </to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Download Title Ratings </from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
