@@ -1,4 +1,5 @@
-from flask import Flask, Response, request, jsonify, session
+from flask import Flask, request, jsonify, session
+from flask.wrappers import Response
 from flask_cors import CORS
 import pymongo
 
@@ -34,8 +35,8 @@ def after_request(response):
 def get_titles():
     try:
         data = list(db.imdb_isi.find())
-        for title in data:
-            title["_id"] = str(title["_id"])
+        # for title in data:
+        #     title["_id"] = str(title["_id"])
         return Response(
             response = json.dumps(data),
             status=200,
@@ -50,10 +51,6 @@ def get_titles():
             status=500,
             mimetype="application/json"
         )
-
-
-
-
 
 
 
