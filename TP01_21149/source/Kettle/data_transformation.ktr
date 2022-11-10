@@ -598,7 +598,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>${Internal.Transformation.Filename.Directory}/title.ratings.tsv.gz</filename>
+    <filename>${Internal.Transformation.Filename.Directory}/../../data/input/title.ratings.tsv.gz</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -670,7 +670,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>${Internal.Transformation.Filename.Directory}/title.basics.tsv.gz</filename>
+    <filename>${Internal.Transformation.Filename.Directory}/../../data/input/title.basics.tsv.gz</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -816,7 +816,7 @@
     <encoding>UTF-8</encoding>
     <addtoresult>N</addtoresult>
     <file>
-      <name>${Internal.Transformation.Filename.Directory}/json_shorts</name>
+      <name>${Internal.Transformation.Filename.Directory}/../../data/output/json_shorts</name>
       <extention>js</extention>
       <append>N</append>
       <split>N</split>
@@ -972,7 +972,7 @@
         <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
         <update_match_field>N</update_match_field>
         <modifier_update_operation>N/A</modifier_update_operation>
-        <modifier_policy/>
+        <modifier_policy>Insert&amp;Update</modifier_policy>
         <json_field>N</json_field>
         <allow_null>N</allow_null>
       </mongo_field>
@@ -982,7 +982,7 @@
         <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
         <update_match_field>N</update_match_field>
         <modifier_update_operation>N/A</modifier_update_operation>
-        <modifier_policy/>
+        <modifier_policy>Insert&amp;Update</modifier_policy>
         <json_field>N</json_field>
         <allow_null>N</allow_null>
       </mongo_field>
@@ -992,7 +992,7 @@
         <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
         <update_match_field>N</update_match_field>
         <modifier_update_operation>N/A</modifier_update_operation>
-        <modifier_policy/>
+        <modifier_policy>Insert&amp;Update</modifier_policy>
         <json_field>N</json_field>
         <allow_null>N</allow_null>
       </mongo_field>
@@ -1002,7 +1002,7 @@
         <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
         <update_match_field>N</update_match_field>
         <modifier_update_operation>N/A</modifier_update_operation>
-        <modifier_policy/>
+        <modifier_policy>Insert&amp;Update</modifier_policy>
         <json_field>N</json_field>
         <allow_null>N</allow_null>
       </mongo_field>
@@ -1012,7 +1012,7 @@
         <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
         <update_match_field>N</update_match_field>
         <modifier_update_operation>N/A</modifier_update_operation>
-        <modifier_policy/>
+        <modifier_policy>Insert&amp;Update</modifier_policy>
         <json_field>N</json_field>
         <allow_null>N</allow_null>
       </mongo_field>
@@ -1022,7 +1022,7 @@
         <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
         <update_match_field>N</update_match_field>
         <modifier_update_operation>N/A</modifier_update_operation>
-        <modifier_policy/>
+        <modifier_policy>Insert&amp;Update</modifier_policy>
         <json_field>N</json_field>
         <allow_null>N</allow_null>
       </mongo_field>
@@ -1032,7 +1032,7 @@
         <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
         <update_match_field>N</update_match_field>
         <modifier_update_operation>N/A</modifier_update_operation>
-        <modifier_policy/>
+        <modifier_policy>Insert&amp;Update</modifier_policy>
         <json_field>N</json_field>
         <allow_null>N</allow_null>
       </mongo_field>
@@ -1042,7 +1042,7 @@
         <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
         <update_match_field>N</update_match_field>
         <modifier_update_operation>N/A</modifier_update_operation>
-        <modifier_policy/>
+        <modifier_policy>Insert&amp;Update</modifier_policy>
         <json_field>N</json_field>
         <allow_null>N</allow_null>
       </mongo_field>
@@ -1052,7 +1052,7 @@
         <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
         <update_match_field>N</update_match_field>
         <modifier_update_operation>N/A</modifier_update_operation>
-        <modifier_policy/>
+        <modifier_policy>Insert&amp;Update</modifier_policy>
         <json_field>N</json_field>
         <allow_null>N</allow_null>
       </mongo_field>
@@ -1062,7 +1062,7 @@
         <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
         <update_match_field>N</update_match_field>
         <modifier_update_operation>N/A</modifier_update_operation>
-        <modifier_policy/>
+        <modifier_policy>Insert&amp;Update</modifier_policy>
         <json_field>N</json_field>
         <allow_null>N</allow_null>
       </mongo_field>
@@ -1072,7 +1072,7 @@
         <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
         <update_match_field>N</update_match_field>
         <modifier_update_operation>N/A</modifier_update_operation>
-        <modifier_policy/>
+        <modifier_policy>Insert&amp;Update</modifier_policy>
         <json_field>N</json_field>
         <allow_null>N</allow_null>
       </mongo_field>
@@ -1082,7 +1082,7 @@
         <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
         <update_match_field>N</update_match_field>
         <modifier_update_operation>N/A</modifier_update_operation>
-        <modifier_policy/>
+        <modifier_policy>Insert&amp;Update</modifier_policy>
         <json_field>N</json_field>
         <allow_null>N</allow_null>
       </mongo_field>
@@ -1092,7 +1092,7 @@
         <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
         <update_match_field>N</update_match_field>
         <modifier_update_operation>N/A</modifier_update_operation>
-        <modifier_policy/>
+        <modifier_policy>Insert&amp;Update</modifier_policy>
         <json_field>N</json_field>
         <allow_null>N</allow_null>
       </mongo_field>
@@ -1393,6 +1393,81 @@
     </GUI>
   </step>
   <step>
+    <name>Split genres</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <splitfield>genres</splitfield>
+    <delimiter>,</delimiter>
+    <enclosure/>
+    <fields>
+      <field>
+        <name>genre_1</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>
+      <field>
+        <name>genre_2</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>
+      <field>
+        <name>genre_3</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>464</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Switch / case</name>
     <type>SwitchCase</type>
     <description/>
@@ -1458,7 +1533,7 @@
     <xml_main_element>Titles</xml_main_element>
     <xml_repeat_element>Title</xml_repeat_element>
     <file>
-      <name>${Internal.Transformation.Filename.Directory}/xml_tv_episodes</name>
+      <name>${Internal.Transformation.Filename.Directory}/../../data/output/xml_tv_episodes</name>
       <extention>xml</extention>
       <servlet_output>N</servlet_output>
       <do_not_open_newfile_init>Y</do_not_open_newfile_init>
@@ -1673,7 +1748,7 @@
     <xml_main_element>Titles</xml_main_element>
     <xml_repeat_element>Title</xml_repeat_element>
     <file>
-      <name>${Internal.Transformation.Filename.Directory}/xml_tv_series</name>
+      <name>${Internal.Transformation.Filename.Directory}/../../data/output/xml_tv_series</name>
       <extention>xml</extention>
       <servlet_output>N</servlet_output>
       <do_not_open_newfile_init>Y</do_not_open_newfile_init>
@@ -1869,81 +1944,6 @@
     <GUI>
       <xloc>1392</xloc>
       <yloc>608</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Split genres</name>
-    <type>FieldSplitter</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <splitfield>genres</splitfield>
-    <delimiter>,</delimiter>
-    <enclosure/>
-    <fields>
-      <field>
-        <name>genre_1</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>none</trimtype>
-      </field>
-      <field>
-        <name>genre_2</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>none</trimtype>
-      </field>
-      <field>
-        <name>genre_3</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>none</trimtype>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>464</xloc>
-      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
