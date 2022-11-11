@@ -1,0 +1,50 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">._id</th>
+        <th scope="col">titleType</th>
+		<th scope="col">primaryTitle</th>
+		<th scope="col">originalTitle</th>
+	    <th scope="col">isAdult</th>
+        <th scope="col">startYear</th>
+        <th scope="col">endYear</th>
+        <th scope="col">runtimeMinutes</th>
+        <th scope="col">genre_1</th>
+        <th scope="col">genre_2</th>
+        <th scope="col">genre_3</th>
+        <th scope="col">averageRating</th>
+        <th scope="col">numVotes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let title of titles; index as i">
+        <th scope="row">{{i+1}}</th>
+        <td>{{title._id}}</td>
+        <td>{{title.titleType}}</td>
+        <td>{{title.primaryTitle}}</td>
+        <td>{{title.originalTitle}}</td>
+        <td>{{title.isAdult}}</td>
+        <td>{{title.startYear}}</td>
+        <td>{{title.endYear}}</td>
+        <td>{{title.runtimeMinutes}}</td>
+        <td>{{title.genre_1}}</td>
+        <td>{{title.genre_2}}</td>
+        <td>{{title.genre_3}}</td>
+        <td>{{title.averageRating}}</td>
+        <td>{{title.numVotes}}</td>
+      </tr>
+      <!-- <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr> -->
+    </tbody>
+  </table>

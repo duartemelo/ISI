@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewTitlesComponent } from './view-titles/view-titles.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ViewTitlesComponent
   ],
   imports: [
     BrowserModule,
