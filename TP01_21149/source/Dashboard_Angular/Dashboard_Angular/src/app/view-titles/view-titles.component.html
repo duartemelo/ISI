@@ -15,10 +15,13 @@
         <th scope="col">genre_3</th>
         <th scope="col">averageRating</th>
         <th scope="col">numVotes</th>
+        <th class="buttons-header">
+          <input type="text" placeholder="Pesquisar" [(ngModel)]="filterText">
+      </th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let title of titles; index as i">
+      <tr *ngFor="let title of titles | filter:filterText; index as i">
         <th scope="row">{{i+1}}</th>
         <td>{{title._id}}</td>
         <td>{{title.titleType}}</td>

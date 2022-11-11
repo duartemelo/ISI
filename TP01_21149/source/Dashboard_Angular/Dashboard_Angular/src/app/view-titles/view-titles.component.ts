@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {SharedServiceService} from '../shared-service.service';
 
 
@@ -16,7 +16,7 @@ export class ViewTitlesComponent implements OnInit {
 
   titles: any[] = [];
 
-  
+  @Input() filterText: any;
 
   constructor(private service: SharedServiceService) { }
 
