@@ -438,21 +438,6 @@
   </notepads>
   <order>
     <hop>
-      <from>Input GZIP TSV ratings</from>
-      <to>Merge ratings to titles</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Merge ratings to titles</from>
-      <to>If rating values are null</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>If rating values are null</from>
-      <to>Sort rows by tConst and titleType</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Sort rows by tConst and titleType</from>
       <to>Switch / case</to>
       <enabled>Y</enabled>
@@ -497,6 +482,21 @@
       <to>Merge ratings to titles</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Merge ratings to titles</from>
+      <to>If values are null</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>If values are null</from>
+      <to>Sort rows by tConst and titleType</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Input GZIP TSV ratings</from>
+      <to>Merge ratings to titles</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>Dummy (do nothing)</name>
@@ -518,13 +518,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1088</xloc>
+      <xloc>1152</xloc>
       <yloc>704</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>If rating values are null</name>
+    <name>If values are null</name>
     <type>IfNull</type>
     <description/>
     <distribute>Y</distribute>
@@ -572,6 +572,30 @@
         <mask/>
         <set_empty_string>N</set_empty_string>
       </field>
+      <field>
+        <name>isAdult</name>
+        <value>null</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>startYear</name>
+        <value>null</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>endYear</name>
+        <value>null</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>runtimeMinutes</name>
+        <value>null</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -582,7 +606,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>880</xloc>
+      <xloc>896</xloc>
       <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
@@ -654,8 +678,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>464</xloc>
-      <yloc>320</yloc>
+      <xloc>336</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -890,7 +914,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1424</xloc>
+      <xloc>1488</xloc>
       <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1106,7 +1130,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1440</xloc>
+      <xloc>1504</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1387,7 +1411,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1088</xloc>
+      <xloc>1152</xloc>
       <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1512,7 +1536,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1088</xloc>
+      <xloc>1152</xloc>
       <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1727,7 +1751,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1424</xloc>
+      <xloc>1488</xloc>
       <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1942,7 +1966,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1392</xloc>
+      <xloc>1456</xloc>
       <yloc>608</yloc>
       <draw>Y</draw>
     </GUI>
