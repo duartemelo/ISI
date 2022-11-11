@@ -39,24 +39,38 @@
 	<thead>
 		<tr>
 			<th scope="col">#</th>
-			<th scope="col">Country</th>
-			<th scope="col">Area</th>
-			<th scope="col">Population</th>
+			<th scope="col">._id</th>
+			<th scope="col">titleType</th>
+			<th scope="col">primaryTitle</th>
+			<th scope="col">originalTitle</th>
+			<th scope="col">isAdult</th>
+      <th scope="col">startYear</th>
+      <th scope="col">endYear</th>
+      <th scope="col">runtimeMinutes</th>
+      <th scope="col">genre_1</th>
+      <th scope="col">genre_2</th>
+      <th scope="col">genre_3</th>
+      <th scope="col">averageRating</th>
+      <th scope="col">numVotes</th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr *ngFor="let country of countries$ | async; index as i">
+		<tr *ngFor="let title of titles$ | async; index as i">
 			<th scope="row">{{ i + 1 }}</th>
-			<td>
-				<img
-					[src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag"
-					class="me-2"
-					style="width: 20px"
-				/>
-				<ngb-highlight [result]="country.name" [term]="filter.value"></ngb-highlight>
-			</td>
-			<td><ngb-highlight [result]="country.area | number" [term]="filter.value"></ngb-highlight></td>
-			<td><ngb-highlight [result]="country.population | number" [term]="filter.value"></ngb-highlight></td>
-		</tr>
+			<td><ngb-highlight [result]="title._id" [term]="filter.value"></ngb-highlight></td>
+			<td><ngb-highlight [result]="title.titleType" [term]="filter.value"></ngb-highlight></td>
+			<td><ngb-highlight [result]="title.primaryTitle" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="title.originalTitle" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="title.isAdult" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="title.startYear" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="title.endYear" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="title.runtimeMinutes" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="title.genre_1" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="title.genre_2" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="title.genre_3" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="title.averageRating" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="title.numVotes" [term]="filter.value"></ngb-highlight></td>
+
+    </tr>
 	</tbody>
 </table>

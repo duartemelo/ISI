@@ -1,52 +1,47 @@
-import { Component, PipeTransform} from '@angular/core';
+import { Component, PipeTransform, TestabilityRegistry} from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 
 import { FormControl } from '@angular/forms';
 
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import {SharedServiceService} from '../app/shared-service.service'
 
-interface Country {
-	name: string;
-	flag: string;
-	area: number;
-	population: number;
+interface Title {
+  _id: string;
+  titleType: string;
+  primaryTitle: string;
+  originalTitle: string;
+  isAdult: string;
+  startYear: string;
+  endYear: string;
+  runtimeMinutes: string;
+  genre_1: string;
+  genre_2: string;
+  genre_3: string;
+  averageRating: string;
+  numVotes: string;
 }
 
-const COUNTRIES: Country[] = [
-	{
-		name: 'Russia',
-		flag: 'f/f3/Flag_of_Russia.svg',
-		area: 17075200,
-		population: 146989754,
-	},
-	{
-		name: 'Canada',
-		flag: 'c/cf/Flag_of_Canada.svg',
-		area: 9976140,
-		population: 36624199,
-	},
-	{
-		name: 'United States',
-		flag: 'a/a4/Flag_of_the_United_States.svg',
-		area: 9629091,
-		population: 324459463,
-	},
-	{
-		name: 'China',
-		flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
-		area: 9596960,
-		population: 1409517397,
-	},
-];
+let titles: Title[] = [];
 
-function search(text: string, pipe: PipeTransform): Country[] {
-	return COUNTRIES.filter((country) => {
+function search(text: string, pipe: PipeTransform): Title[] {
+	return titles.filter((title) => {
 		const term = text.toLowerCase();
 		return (
-			country.name.toLowerCase().includes(term) ||
-			pipe.transform(country.area).includes(term) ||
-			pipe.transform(country.population).includes(term)
+      title._id.toLowerCase().includes(term) ||
+      title.titleType.toLowerCase().includes(term) ||
+      title.primaryTitle.toLowerCase().includes(term) ||
+      title.originalTitle.toLowerCase().includes(term) ||
+      title.isAdult.toLowerCase().includes(term) ||
+      title.startYear.toLowerCase().includes(term) ||
+      title.endYear.toLowerCase().includes(term) ||
+      title.runtimeMinutes.toLowerCase().includes(term) ||
+      title.genre_1.toLowerCase().includes(term) ||
+      title.genre_2.toLowerCase().includes(term) ||
+      title.genre_3.toLowerCase().includes(term) ||
+      title.averageRating.toLowerCase().includes(term) ||
+      title.numVotes.toLowerCase().includes(term)
 		);
 	});
 }
@@ -60,14 +55,39 @@ function search(text: string, pipe: PipeTransform): Country[] {
 
 
 
+
+
 export class AppComponent {
-  countries$: Observable<Country[]>;
+  titles$: Observable<Title[]>;
 	filter = new FormControl('', { nonNullable: true });
 
-	constructor(pipe: DecimalPipe) {
-		this.countries$ = this.filter.valueChanges.pipe(
+	constructor(pipe: DecimalPipe, private service: SharedServiceService) {
+		this.titles$ = this.filter.valueChanges.pipe(
 			startWith(''),
 			map((text) => search(text, pipe)),
 		);
 	}
+  
+  ngOnInit(){
+    this.get_services();
+  }
+
+  get_services(){
+    let i = 0;
+    this.service.get_titles().subscribe(data =>{
+      data.forEach(title => {
+        if (i < 100){
+          // let jsonObj = JSON.parse(title);
+          let final_title = title as Title;
+          titles.push(final_title);
+        }
+        i++;
+      });
+      console.log(titles);
+      console.log(this.titles$);
+    })
+  }
+
+  
 }
+
